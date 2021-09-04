@@ -23,6 +23,15 @@ router.post('/new-form', async (request, response) => {
     }
 })
 
+router.get('/all-forms', async (request, response) => {
+    try {
+        const allForms = await Form.find()
+        return response.render('../src/views/all_forms', { allForms: allForms })
+    } catch (error) {
+
+    }
+})
+
 router.get('/form/:id', async (request, response) => {
     try {
         const _id = request.params.id
