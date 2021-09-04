@@ -11,7 +11,7 @@
 
 - [x] create new form
 - [ ] edit form
-- [ ] show one form by id
+- [x] show one form by id
 - [ ] show all form
 - [ ] delete one form
 - [ ] show list of all form 
@@ -21,7 +21,7 @@
 $ git clone <https://github.com/wesleyafc/form>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd form
+$ cd form-crud
 
 # Instale as dependências
 $ npm install

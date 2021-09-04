@@ -23,5 +23,21 @@ router.post('/new-form', async (request, response) => {
     }
 })
 
+router.get('/form/:id', async (request, response) => {
+    try {
+        const _id = request.params.id
+        const formResult = await Form.findOne({ _id })
+
+        if (!formResult) {
+            return response.status(404).json({ formResult })
+        } else {
+            return response.render('../src/views/one_form', { form: formResult })
+        }
+
+    } catch (error) {
+        return response.status(500).json({ "error": error })
+    }
+})
+
 
 module.exports = router
