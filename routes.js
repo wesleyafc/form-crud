@@ -92,6 +92,13 @@ router.post('/form/:id', async (request, response) => {
 
     }
 })
-
+router.get('/delete/:id', async (request, response) => {
+    const _id = request.params.id
+    await Form.findByIdAndDelete({ _id })
+    if (!_id) {
+        response.send(`this id:${_id} not found`)
+    }
+    response.redirect('/')
+})
 
 module.exports = router
