@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const FormSchema = new mongoose.Schema({
-    sixStrings: String,
+    formName: { type: String, required: true },
     azulMarinho: { type: String, default: '' },
     amareloCanario: { type: String, default: '' },
     verdeBebe: { type: String, default: '' },

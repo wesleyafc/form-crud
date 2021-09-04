@@ -10,23 +10,15 @@
 </head>
 
 <body>
-    <style>
-        a {
-            font-size: 3rem;
-            color: blue;
-            text-decoration: none;
-        }
 
-        a:hover {
-            color: red;
-        }
-    </style>
     <!--get one form id and create a link-->
     <% allForms.forEach(function(form) { %>
 
-        <p><a href="/form/<%= form._id %>">show this form <%= form.name %> </a></p>
+        <p><a href="/form/<%= form._id %>">Form <%= form.formName %> </a></p>
 
         <% }) %>
+
+            <p><a href="/">Back to home </a></p>
 
 
 </body>

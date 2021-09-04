@@ -12,9 +12,8 @@
 - [x] create new form
 - [ ] edit form
 - [x] show one form by id
-- [ ] show all form
 - [ ] delete one form
-- [ ] show list of all form 
+- [x] show list of all form 
 
 
 # Clone este repositório
