@@ -48,5 +48,50 @@ router.get('/form/:id', async (request, response) => {
     }
 })
 
+//this renders the form page
+router.get('/edit-form/:id', async (request, response) => {
+    try {
+        const _id = request.params.id
+        let form = await Form.findOne({ _id })
+        console.log(form)
+
+        if (!form) {
+            response.send(`form with id ${_id} does not exist`)
+        }
+        response.render('../src/views/edit_form', { form: form })
+    } catch (error) {
+        return response.status(500).json({ "error": error })
+    }
+
+})
+
+//this will be update a form
+router.post('/form/:id', async (request, response) => {
+    try {
+        const _id = request.params.id
+        const { azulMarinho, amareloCanario, verdeBebe, vermelho, azulRoyal, formName } = request.body
+
+        const updatedForm = await Form.findOne({ _id })
+        if (!updatedForm) {
+            return response.status(404).json({ updatedForm })
+        } else {
+            updatedForm.formName = formName
+            updatedForm.azulMarinho = azulMarinho
+            updatedForm.amareloCanario = amareloCanario
+            updatedForm.verdeBebe = verdeBebe
+            updatedForm.vermelho = vermelho
+            updatedForm.azulRoyal = azulRoyal
+
+            await updatedForm.save()
+
+            return response.render('../src/views/one_form', { form: updatedForm })
+        }
+
+    } catch (error) {
+        return response.status(500).json({ "error": error })
+
+    }
+})
+
 
 module.exports = router

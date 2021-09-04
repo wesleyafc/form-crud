@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+
+        <form action="/form/<%= form._id %>" method="POST">
+            <p>barbande4/4</p>
+            <div class="mainform">
+
+                <div>
+                    <label for="formName">Form Name</label>
+
+                    <input name="formName" value="<%= form.formName %>" required="required">
+                    <br>
+                </div>
+
+                <div>
+                    <label for="azul-marinho">Azul Marinho</label>
+                    <input type="number" name="azulMarinho" value="<%= form.azulMarinho %>" min="0" max="999">
+                    <br>
+                </div>
+
+                <div>
+                    <label for="amarelo-canario">Amarelo Canario</label>
+                    <input type="number" name="amareloCanario" value="<%= form.amareloCanario %>" min="0" max="999">
+                    <br>
+                </div>
+
+                <div>
+                    <label for="verde-bebe">Verde Bebe</label>
+                    <input type="number" name="verdeBebe" value="<%= form.verdeBebe %>" min="0" max="999">
+                    <br>
+                </div>
+
+                <div>
+                    <label for="vermelho">Vermelho</label>
+                    <input type="number" name="vermelho" value="<%= form.vermelho %>" min="0" max="999">
+                    <br>
+                </div>
+
+                <div>
+                    <label for="azul-royal">Azul Royal</label>
+                    <input type="number" name="azulRoyal" value="<%= form.azulRoyal %>" min="0" max="999">
+                    <br>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>
